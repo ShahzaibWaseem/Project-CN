@@ -4,7 +4,7 @@ This is a Semester Project, for the Course Computer Networks. This is a HTTP Dow
 
 ## Input Format
 ```bash
-$ python3 client.py -r -n <num_connections> -i <metric_interval> -c <connection_type> -f <file_location> -o <output_location>
+$ python3 client.py -n <num_connections> -i <metric_interval> -c <connection_type> -f <file_location> -o <output_location> -r
 ```
 |Tag|Verbose Tag|Optional/Required|Function|
 |--|--|--|--|
@@ -15,5 +15,13 @@ $ python3 client.py -r -n <num_connections> -i <metric_interval> -c <connection_
 |-o|\-\-location|Required|Address pointing to the location where the file is downloaded|
 |-r|\-\-resume|Optional|Whether to resume the existing download in progress|
 
-In the URL (-f or \-\-url) there must be a port number. If it is just a http link then the port number is 8080.
+In the URL (-f or \-\-url) there must be a port number. If it is just a http link then the port number is **8080**.
+
+```
 http://www.example.com:<port_number>/path/
+```
+
+## Example
+```bash
+$ python3 client.py -n 8 -i 0.5 -c TCP -f http://www.gutenberg.org/cache/epub/1661/pg1661.txt -o ./Books/ -r
+```
